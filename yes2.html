@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cute Cat GIFs</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+    }
+    .cat-gif {
+        display: block;
+        position: absolute;
+        max-width: 200px;
+    }
+
+    .container {
+        position: relative;
+        width: 100%; /* Adjust width as needed */
+        height: auto; /* Adjust height as needed */
+    }
+
+    img {
+        max-width: 100%; /* Ensure the image doesn't exceed container width */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Ensures image is not inline */
+        margin: 0 auto; /* Center the image horizontally */
+    }
+
+    .buttons {
+        text-align: center;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: black;
+        color: white;
+        border: none;
+        cursor: pointer;
+        /* Add additional styling as needed */
+    }
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <section id="cat-gifs">
+        <h2>Do you know that you have beautiful blue hair ?????</h2>
+        <img class="cat-gif" src="https://media.tenor.com/_hUq1BSUsiMAAAAM/cat-cute.gif" alt="Cat GIF">
+        <img class="cat-gif" src="https://media.tenor.com/_hUq1BSUsiMAAAAM/cat-cute.gif" alt="Cat GIF">
+        <img class="cat-gif" src="https://media.tenor.com/_hUq1BSUsiMAAAAM/cat-cute.gif" alt="Cat GIF">
+        <img class="cat-gif" src="https://media.tenor.com/_hUq1BSUsiMAAAAM/cat-cute.gif" alt="Cat GIF">
+        <img class="cat-gif" src="https://media.tenor.com/_hUq1BSUsiMAAAAM/cat-cute.gif" alt="Cat GIF">
+        <img class="cat-gif" src="https://media.tenor.com/_hUq1BSUsiMAAAAM/cat-cute.gif" alt="Cat GIF">
+    </section>
+</div>
+
+<div class="container" id="buttonsContainer">
+    <div class="buttons">
+        <a href="./yes3.html"><button id="yesButton">Yes</button></a>
+        <button id="noButton">No</button>
+    </div>
+</div>
+
+<script>
+    // Function to generate a random position within a specified range
+    function randomPosition(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    // Select the "No" button and container
+    const noButton = document.getElementById('noButton');
+    const buttonsContainer = document.getElementById('buttonsContainer');
+
+    // Set initial position for the "No" button
+    let initialLeft = randomPosition(0, window.innerWidth - 200); // Max width minus button width
+    let initialTop = randomPosition(0, window.innerHeight - 50); // Max height minus button height
+
+    noButton.style.position = 'absolute';
+    noButton.style.left = initialLeft + 'px';
+    noButton.style.top = initialTop + 'px';
+
+    // Function to scatter the "No" button
+    function scatterNoButton() {
+        let left = randomPosition(0, window.innerWidth - 200); // Max width minus button width
+        let top = randomPosition(0, window.innerHeight - 50); // Max height minus button height
+
+        noButton.style.left = left + 'px';
+        noButton.style.top = top + 'px';
+    }
+
+    // Event listener for hovering over the "No" button
+    noButton.addEventListener('mouseenter', scatterNoButton);
+
+    // Reset button position on leaving the button area
+    buttonsContainer.addEventListener('mouseleave', function() {
+        noButton.style.left = initialLeft + 'px';
+        noButton.style.top = initialTop + 'px';
+    });
+
+    // Select all cat GIF elements
+    const catGifs = document.querySelectorAll('.cat-gif');
+
+    // Set positions for each cat GIF
+    catGifs.forEach(function(gif) {
+        // Calculate random left and top positions within the container
+        let left = randomPosition(0, window.innerWidth - 200); // Max width minus cat gif width
+        let top = randomPosition(0, window.innerHeight - 200); // Max height minus cat gif height
+
+        // Apply styles
+        gif.style.left = left + 'px';
+        gif.style.top = top + 'px';
+    });
+</script>
+
+</body>
+</html>

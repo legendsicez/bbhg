@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cute Cat GIFs</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+    }
+    .container {
+        position: relative;
+        width: 100%; /* Adjust width as needed */
+        height: auto; /* Adjust height as needed */
+        text-align: center; /* Center align contents */
+    }
+    .cat-gif {
+        position: absolute;
+        max-width: 200px;
+        left: 50%; /* Position at 50% from left */
+        transform: translate(-50%, 0%); /* Center the GIF */
+    }
+    .container h2 {
+        margin-top: 0; /* Remove default margin */
+        background-color: #333; /* Background color */
+        color: #fff; /* Text color */
+        padding: 10px; /* Padding around text */
+        position: relative; /* Ensure stacking context */
+        z-index: 2; /* Ensure text is above GIF */
+    }
+    .buttons {
+        text-align: center;
+        margin-top: 190px; /* Space between h2 and buttons */
+    }
+    button {
+        padding: 10px 20px;
+        margin: 100px;
+        background-color: black;
+        color: white;
+        border: none;
+        cursor: pointer;
+        /* Add additional styling as needed */
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <section id="cat-gifs">
+        <img class="cat-gif" src="https://media.tenor.com/h_8Ue_MPJlQAAAAM/cat-black-cat.gif" alt="Cat GIF">
+    </section>
+</div>
+
+<h1>WRONG ANSWER!</h1>
+
+<div class="container">
+    
+    <div class="buttons">
+        <a href="./yes.html"><button>Yes</button></a>
+    </div>
+</div>
+
+</body>
+</html>
